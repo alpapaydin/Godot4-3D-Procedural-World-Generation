@@ -2,6 +2,8 @@
 
 This project demonstrates procedural terrain generation in the Godot game engine using a 3D grid map and the FastNoiseLite library for noise generation.
 
+![Preview](https://github.com/alpapaydin/Godot4-3D-Procedural-World-Generation/blob/master/preview.png?raw=true)
+
 ## Features
 
 - **Procedural Terrain Generation**: The terrain is generated procedurally using Perlin noise. This means that the terrain is different every time you run the game, but remains consistent across play sessions if you use the same seed.
