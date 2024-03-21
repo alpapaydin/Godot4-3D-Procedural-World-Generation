@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg5wyhc4ykoef"]
+
+[ext_resource type="MeshLibrary" uid="uid://bpex1086vgwgh" path="res://Assets/Models/meshLibrary.tres" id="1_a8g6y"]
+[ext_resource type="Script" path="res://Scenes/World/GridMap.gd" id="2_ogyl1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_secnb"]
+
+[sub_resource type="Sky" id="Sky_avorj"]
+sky_material = SubResource("ProceduralSkyMaterial_secnb")
+
+[sub_resource type="Environment" id="Environment_4mpvh"]
+background_mode = 2
+background_energy_multiplier = 2.58
+sky = SubResource("Sky_avorj")
+sky_custom_fov = 49.7
+ambient_light_source = 3
+ambient_light_energy = 1.84
+reflected_light_source = 2
+tonemap_mode = 1
+glow_enabled = true
+fog_enabled = true
+fog_sky_affect = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0289
+volumetric_fog_emission = Color(0.721569, 0.721569, 0.721569, 1)
+volumetric_fog_anisotropy = 0.61
+volumetric_fog_sky_affect = 0.353
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_88oay"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 31.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sb1af"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_slcuk"]
+
+[node name="map" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4mpvh")
+camera_attributes = SubResource("CameraAttributesPractical_88oay")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_a8g6y")
+physics_material = SubResource("PhysicsMaterial_sb1af")
+script = ExtResource("2_ogyl1")
+
+[node name="FoliageMap" type="GridMap" parent="GridMap"]
+mesh_library = ExtResource("1_a8g6y")
+physics_material = SubResource("PhysicsMaterial_slcuk")
