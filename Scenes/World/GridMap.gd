@@ -3,8 +3,8 @@ extends GridMap
 var terrain_noise := FastNoiseLite.new()
 var stone_noise := FastNoiseLite.new()
 var map_width = 50 # Adjust this value for desired map width
-var map_depth = 30 # Adjust this value for desired map depth
-var water_level = -9 # Adjust this value for desired water level
+var map_depth = 40 # Adjust this value for desired map depth
+var water_level = -15 # Adjust this value for desired water level
 var chunk_size = 10.0 # Adjust this value for desired chunk size
 var chunks = {} # Dictionary to store generated chunks
 var load_distance = 2 # Distance around the player to load chunks
